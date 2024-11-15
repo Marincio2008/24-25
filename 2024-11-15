@@ -1,0 +1,26 @@
+#include <iostream>
+#include <stdexcept>
+using namespace std;
+
+// Funzione di Ackermann
+int Ackermann(int m, int n) {
+    if (m == 0) {
+        return n + 1;
+    }  if (n == 0) {
+        return Ackermann(m - 1, 1);
+    } else {
+        return Ackermann(m - 1, Ackermann(m, n - 1)); 
+    }
+}
+
+int main() {
+    cout << "Test della funzione di Ackermann:" << endl;
+        int m, n;
+        cout << "Inserisci il valore di m ( numero intero non negativo): ";
+        cin >> m;
+        cout << "Inserisci il valore di n (numero intero non negativo): ";
+        cin >> n;
+      int risultato = Ackermann(m, n);
+    cout << "Ackermann(" << m << ", " << n << ") = " << risultato << endl;
+    return 0;
+}
